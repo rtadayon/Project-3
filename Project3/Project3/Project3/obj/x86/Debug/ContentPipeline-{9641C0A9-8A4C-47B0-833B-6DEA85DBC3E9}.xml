@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>launcher_base.fbx</Source>
+      <Name>launcher_base</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\launcher_base.xnb</Output>
+      <Time>2007-07-24T22:38:00-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\launcher_base_0.xml</Key>
+        <Value>2012-03-28T01:51:56.733287-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\launcher_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>launcher_head.fbx</Source>
+      <Name>launcher_head</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\launcher_head.xnb</Output>
+      <Time>2007-07-24T22:39:00-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\launcher_head_0.xml</Key>
+        <Value>2012-03-28T01:51:58.7104-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\launcher_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>launcher_base.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\launcher_base_0.xml</Output>
+      <Time>2007-07-24T22:38:00-04:00</Time>
+    </Item>
+    <Item>
+      <Source>launcher.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\launcher_0.xnb</Output>
+      <Time>2007-07-25T11:27:00-04:00</Time>
+    </Item>
+    <Item>
+      <Source>launcher_head.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\launcher_head_0.xml</Output>
+      <Time>2007-07-24T22:39:00-04:00</Time>
+    </Item>
+    <Item>
+      <Source>terrain.fbx</Source>
+      <Name>terrain</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\terrain.xnb</Output>
+      <Time>2007-07-25T11:58:00-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\terrain_0.xml</Key>
+        <Value>2012-03-28T01:56:51.2201306-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\terrain_0.xnb</Request>
+      <Request>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\sunset_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>terrain.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\terrain_0.xml</Output>
+      <Time>2007-07-25T11:58:00-04:00</Time>
+    </Item>
+    <Item>
+      <Source>terrain.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\terrain_0.xnb</Output>
+      <Time>2007-07-25T12:08:00-04:00</Time>
+    </Item>
+    <Item>
+      <Source>sunset.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\sunset_0.xnb</Output>
+      <Time>2007-07-25T00:28:00-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{9641C0A9-8A4C-47B0-833B-6DEA85DBC3E9}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-03-09T04:27:43.2474799-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

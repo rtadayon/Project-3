@@ -19,10 +19,18 @@ namespace Project3
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Model myterrain;
+        Player player;
+        static Vector3 campos = new Vector3(0, 60, 160);
+        static Vector3 lookat = new Vector3(0, 50, 0);
+        static Matrix view, proj;
+        float camrot = MathHelper.ToRadians(90.0f);
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            player = new Player();
         }
 
         /// <summary>
@@ -46,7 +54,10 @@ namespace Project3
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
+            proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), graphics.GraphicsDevice.Viewport.AspectRatio, 1.0f, 10000.0f);
+            player.LoadContent(Content);
+            myterrain = Content.Load<Model>("terrain");
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,9 +80,13 @@ namespace Project3
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            player.Update();
             // TODO: Add your update logic here
 
+
+
+            campos = new Vector3(-160 * (float)Math.Cos(player.rot + camrot), 60, 160 * (float)Math.Sin(player.rot + camrot));
+            view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
             base.Update(gameTime);
         }
 
@@ -82,10 +97,30 @@ namespace Project3
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            player.Draw();
+            drawmodel(myterrain, Vector3.Zero, 0, 0, 1);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+        }
+
+        public static void drawmodel(Model m, Vector3 pos, float rot, float otherrot, float scale)
+        {
+            foreach (ModelMesh mesh in m.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    effect.PreferPerPixelLighting = true;
+                    effect.World = Matrix.CreateFromYawPitchRoll(rot, otherrot, 0)
+                    * Matrix.CreateTranslation(pos)
+                    * Matrix.CreateScale(scale);
+                    effect.Projection = proj;
+                    effect.View = view;
+                }
+
+                mesh.Draw();
+            }
         }
     }
 }
