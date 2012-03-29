@@ -23,8 +23,16 @@ namespace Project3
         Player player;
         static Vector3 campos = new Vector3(0, 60, 160);
         static Vector3 lookat = new Vector3(0, 50, 0);
+        static Vector3 cam2pos = new Vector3(0, 60, -160);
+
         static Matrix view, proj;
+        static Matrix view2, proj2;
+        static Matrix activeview, activeproj;
         float camrot = MathHelper.ToRadians(90.0f);
+        float camrot2 = MathHelper.ToRadians(90.0f);
+        Viewport leftview;
+        Viewport rightview;
+        Viewport totalview;
 
         public Game1()
         {
@@ -55,9 +63,17 @@ namespace Project3
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
-            proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), graphics.GraphicsDevice.Viewport.AspectRatio, 1.0f, 10000.0f);
+            proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (4.0f / 3.0f), 1.0f, 10000.0f);
+            view2 = Matrix.CreateLookAt(cam2pos, lookat, Vector3.Up);
+            proj2 = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (2.0f / 3.0f), 1.0f, 10000.0f);
             player.LoadContent(Content);
             myterrain = Content.Load<Model>("terrain");
+            totalview = GraphicsDevice.Viewport;
+            leftview = totalview;
+            rightview = totalview;
+            leftview.Width = leftview.Width / 2;
+            rightview.Width = rightview.Width / 2;
+            rightview.X = leftview.Width;
             // TODO: use this.Content to load your game content here
         }
 
@@ -87,6 +103,7 @@ namespace Project3
 
             campos = new Vector3(-160 * (float)Math.Cos(player.rot + camrot), 60, 160 * (float)Math.Sin(player.rot + camrot));
             view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
+            view2 = Matrix.CreateLookAt(cam2pos, lookat, Vector3.Up);
             base.Update(gameTime);
         }
 
@@ -96,7 +113,18 @@ namespace Project3
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            GraphicsDevice.Viewport = totalview;
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            GraphicsDevice.Viewport = leftview;
+            activeview = view;
+            activeproj = proj;
+            player.Draw();
+            drawmodel(myterrain, Vector3.Zero, 0, 0, 1);
+
+            GraphicsDevice.Viewport = rightview;
+            activeview = view2;
+            activeproj = proj2;
             player.Draw();
             drawmodel(myterrain, Vector3.Zero, 0, 0, 1);
             // TODO: Add your drawing code here
@@ -106,6 +134,7 @@ namespace Project3
 
         public static void drawmodel(Model m, Vector3 pos, float rot, float otherrot, float scale)
         {
+
             foreach (ModelMesh mesh in m.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
@@ -115,12 +144,13 @@ namespace Project3
                     effect.World = Matrix.CreateFromYawPitchRoll(rot, otherrot, 0)
                     * Matrix.CreateTranslation(pos)
                     * Matrix.CreateScale(scale);
-                    effect.Projection = proj;
-                    effect.View = view;
+                    effect.Projection = activeproj;
+                    effect.View = activeview;
                 }
 
                 mesh.Draw();
             }
+
         }
     }
 }
