@@ -8,6 +8,12 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using BEPUphysics;
+using BEPUphysics.Collidables;
+using BEPUphysics.CollisionShapes;
+using BEPUphysics.DataStructures;
+using BEPUphysics.Entities;
+using BEPUphysics.Entities.Prefabs;
 
 namespace Project3
 {
@@ -33,6 +39,12 @@ namespace Project3
         Viewport leftview;
         Viewport rightview;
         Viewport totalview;
+        Box ground;
+        Sphere cannon;
+        Cannonball ball;
+        List<Cannonball> balls;
+
+        Space spc;
 
         public Game1()
         {
@@ -60,13 +72,15 @@ namespace Project3
         /// </summary>
         protected override void LoadContent()
         {
+            balls = new List<Cannonball>();
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
-            proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (4.0f / 3.0f), 1.0f, 10000.0f);
+            proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (1.0f / 2.0f), 1.0f, 10000.0f);
             view2 = Matrix.CreateLookAt(cam2pos, lookat, Vector3.Up);
-            proj2 = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (2.0f / 3.0f), 1.0f, 10000.0f);
+            proj2 = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (1.0f / 2.0f), 1.0f, 10000.0f);
             player.LoadContent(Content);
+            ball = new Cannonball(new Vector3(0, 700, 0), Content.Load<Model>("cannonBall"), -90, 0, 40);
             myterrain = Content.Load<Model>("terrain");
             totalview = GraphicsDevice.Viewport;
             leftview = totalview;
@@ -74,6 +88,12 @@ namespace Project3
             leftview.Width = leftview.Width / 2;
             rightview.Width = rightview.Width / 2;
             rightview.X = leftview.Width;
+
+            spc = new Space();
+            ground = new Box(Vector3.Zero, 30, 1, 30);
+            cannon = new Sphere(new Vector3(0, 70, 0), 30, 10); 
+            spc.Add(ground);
+            spc.ForceUpdater.Gravity = new Vector3(0, -9.81f, 0);
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,6 +117,12 @@ namespace Project3
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
             player.Update();
+            foreach (Cannonball ball in balls)
+            {
+                ball.Update();
+                
+            }
+            spc.Update();
             // TODO: Add your update logic here
 
 
@@ -105,6 +131,10 @@ namespace Project3
             view = Matrix.CreateLookAt(campos, lookat, Vector3.Up);
             view2 = Matrix.CreateLookAt(cam2pos, lookat, Vector3.Up);
             base.Update(gameTime);
+
+            KeyboardState k = Keyboard.GetState();
+            if(k.IsKeyDown(Keys.Space))
+                balls.Add(new Cannonball(new Vector3(0, 700, -100), Content.Load<Model>("cannonBall"), -MathHelper.ToDegrees(player.rot) - 90, MathHelper.ToDegrees(player.toprot), 40));
         }
 
         /// <summary>
@@ -120,12 +150,17 @@ namespace Project3
             activeview = view;
             activeproj = proj;
             player.Draw();
+            foreach (Cannonball ball in balls)
+                ball.Draw();
+            
             drawmodel(myterrain, Vector3.Zero, 0, 0, 1);
 
             GraphicsDevice.Viewport = rightview;
             activeview = view2;
             activeproj = proj2;
             player.Draw();
+            foreach (Cannonball ball in balls)
+                ball.Draw();
             drawmodel(myterrain, Vector3.Zero, 0, 0, 1);
             // TODO: Add your drawing code here
 

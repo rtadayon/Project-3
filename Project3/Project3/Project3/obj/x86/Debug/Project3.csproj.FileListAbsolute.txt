@@ -10,3 +10,6 @@ C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3
 C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\terrain.xnb
 C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\terrain_0.xnb
 C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\sunset_0.xnb
+C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\cannonBall.xnb
+C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\BEPUphysics.dll
+C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\BEPUphysics.xml

@@ -38,6 +38,7 @@ namespace Project3
         public void Update()
         {
             HandleInput();
+  
         }
 
         public void HandleInput()

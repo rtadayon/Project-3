@@ -113,6 +113,26 @@
       <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\sunset_0.xnb</Output>
       <Time>2007-07-25T00:28:00-04:00</Time>
     </Item>
+    <Item>
+      <Source>cannonBall.fbx</Source>
+      <Name>cannonBall</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\bin\x86\Debug\Content\cannonBall.xnb</Output>
+      <Time>2012-03-30T02:07:48.3311086-04:00</Time>
+      <Dependency>
+        <Key>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\cannonBall_0.xml</Key>
+        <Value>2012-03-30T04:24:16.428441-04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>cannonBall.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Ramin\Documents\Visual Studio 2010\Projects\Project-3\Project3\Project3\Project3\obj\x86\Debug\cannonBall_0.xml</Output>
+      <Time>2012-03-30T02:07:48.3311086-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9641C0A9-8A4C-47B0-833B-6DEA85DBC3E9}</ContentProjectGUID>
